@@ -60,24 +60,28 @@ const styles = StyleSheet.create({
     backgroundColor: '#F4F4F4',
   },
   headerShape: {
-    height: 160,
+    height: 150,
     width: '100%',
     backgroundColor: APP_COLOR,
+    justifyContent: 'flex-end',
   },
   bottomShape: {
     height: 80,
     width: '100%',
     backgroundColor: APP_COLOR,
   },
+  circlesContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   circleShape: {
-    position: 'absolute',
     height: 28,
     width: 28,
+    paddingHorizontal: 24,
     borderRadius: 60,
     backgroundColor: '#FFFFFF',
-    opacity: 0.7,
-    marginLeft: 24,
-    marginTop: 12,
+    margin: 24,
   },
 });
 
