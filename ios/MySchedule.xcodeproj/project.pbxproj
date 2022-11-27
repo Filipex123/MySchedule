@@ -12,6 +12,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3A4FC40B9E602EE86763AD66 /* libPods-MySchedule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242A97F1299DA6B8F850F05A /* libPods-MySchedule.a */; };
+		607651BA290ED4C300764296 /* Icon 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 607651B8290ED4C300764296 /* Icon 120.png */; };
+		607651BE290ED56300764296 /* Icon 180.png in Resources */ = {isa = PBXBuildFile; fileRef = 607651BD290ED56300764296 /* Icon 180.png */; };
+		60CF08852933F2A8008C1B76 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 60CF08842933F2A8008C1B76 /* fonts */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		EF131AF259FC79ADDACF0D2B /* libPods-MySchedule-MyScheduleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7284F89C17B49BE4D91BB3 /* libPods-MySchedule-MyScheduleTests.a */; };
 /* End PBXBuildFile section */
@@ -40,6 +43,9 @@
 		305D1E04B137B1A4BF31FE76 /* Pods-MySchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySchedule.debug.xcconfig"; path = "Target Support Files/Pods-MySchedule/Pods-MySchedule.debug.xcconfig"; sourceTree = "<group>"; };
 		4446D951013FD8A8C3C5E006 /* Pods-MySchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySchedule.release.xcconfig"; path = "Target Support Files/Pods-MySchedule/Pods-MySchedule.release.xcconfig"; sourceTree = "<group>"; };
 		52985A9984381B7CB5BB888C /* Pods-MySchedule-MyScheduleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySchedule-MyScheduleTests.debug.xcconfig"; path = "Target Support Files/Pods-MySchedule-MyScheduleTests/Pods-MySchedule-MyScheduleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		607651B8290ED4C300764296 /* Icon 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon 120.png"; path = "../../../Downloads/Projeto Integrado F/Icon 120.png"; sourceTree = "<group>"; };
+		607651BD290ED56300764296 /* Icon 180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon 180.png"; path = "../../../Downloads/Icon 180.png"; sourceTree = "<group>"; };
+		60CF08842933F2A8008C1B76 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		6C5A8A8A9E00502E1F25A09B /* Pods-MySchedule-MyScheduleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySchedule-MyScheduleTests.release.xcconfig"; path = "Target Support Files/Pods-MySchedule-MyScheduleTests/Pods-MySchedule-MyScheduleTests.release.xcconfig"; sourceTree = "<group>"; };
 		7D7284F89C17B49BE4D91BB3 /* libPods-MySchedule-MyScheduleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MySchedule-MyScheduleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MySchedule/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,6 +95,8 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				607651BD290ED56300764296 /* Icon 180.png */,
+				607651B8290ED4C300764296 /* Icon 120.png */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
@@ -116,6 +124,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				60CF08842933F2A8008C1B76 /* fonts */,
 				13B07FAE1A68108700A75B9A /* MySchedule */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MyScheduleTests */,
@@ -243,7 +252,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				60CF08852933F2A8008C1B76 /* fonts in Resources */,
+				607651BE290ED56300764296 /* Icon 180.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				607651BA290ED4C300764296 /* Icon 120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

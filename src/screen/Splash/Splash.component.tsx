@@ -8,7 +8,7 @@ const Splash: React.FC = () => {
 
   setTimeout(() => {
     navigation.navigate('Login');
-  }, 5000);
+  }, 3000);
 
   return (
     <View

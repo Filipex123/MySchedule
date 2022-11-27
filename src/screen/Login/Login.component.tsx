@@ -1,23 +1,37 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {useState} from 'react';
-import {Button, Text, TextInput, View} from 'react-native';
-import {getUser} from '../../utils/userAPI';
+import React, {useContext, useEffect, useState} from 'react';
+import {
+  Button,
+  Image,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {APP_COLOR} from './constants';
 import styles from './Login.styles';
+import Modal from 'react-native-modal';
+import errorIcon from '../../../assets/errorIconModal.png';
+import {UserContext} from '../../context/UserContext';
 
 const Login: React.FC = () => {
   const navigation = useNavigation();
   const [senha, setSenha] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [loginError, setLoginError] = useState<boolean>(false);
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
+  const {getUser, user} = useContext(UserContext);
+
+  const handleModal = () => setIsModalVisible(() => !isModalVisible);
+
+  useEffect(() => {}, [loginError]);
 
   const handleLoginPress = async () => {
-    const isLoged = await getUser(email, senha);
-    console.log(isLoged);
-    console.log(`Email: ${email} , Senha: ${senha}`);
-    if (isLoged) {
+    await getUser(email, senha);
+    if (user) {
       navigation.navigate('Home');
     } else {
+      handleModal();
       setLoginError(true);
     }
   };
@@ -63,7 +77,36 @@ const Login: React.FC = () => {
             color={APP_COLOR}
             accessibilityLabel="This is the button to login in app"
           />
-          {loginError && <Text>Deu erro</Text>}
+          {loginError && (
+            <Modal
+              isVisible={isModalVisible}
+              style={{
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <View style={styles.modalOuterContainer}>
+                <View style={styles.modalContainer}>
+                  <Image source={errorIcon} />
+                  <Text style={styles.modalTitle}>
+                    Falha ao fazer login email ou senha incorreto
+                  </Text>
+
+                  <View style={styles.buttonModalContainer}>
+                    <TouchableOpacity
+                      onPress={handleModal}
+                      style={styles.modalButton}>
+                      <View>
+                        <Text style={styles.modalButtonText}>
+                          Tente novamente
+                        </Text>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+            </Modal>
+          )}
         </View>
         <View style={styles.orContainer}>
           <View style={styles.smallLine} />

@@ -1,9 +1,11 @@
-export const getUser = async (
+import User from '../model/User.model';
+
+export const getUserByLogin = async (
   email: string,
   senha: string,
-): Promise<boolean> => {
+): Promise<User | null> => {
   try {
-    const resp = await fetch('http://172.16.231.230:3001/aluno/login', {
+    const resp = await fetch('http://192.168.0.11:3001/aluno/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -13,10 +15,9 @@ export const getUser = async (
     const data = await resp.json();
 
     console.log({data});
-    return data;
+    return data as User;
   } catch (error: any) {
     console.log(`Erro ao fazer requisicao: ${error}`);
   }
-
-  return false;
+  return null;
 };
