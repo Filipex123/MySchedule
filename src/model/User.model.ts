@@ -1,6 +1,7 @@
 import Vestibular from './Vestibular.model';
 
 interface User {
+  _id: string;
   nome: string;
   dataNasc: Date;
   genero: string;

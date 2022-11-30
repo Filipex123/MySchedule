@@ -20,20 +20,21 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [loginError, setLoginError] = useState<boolean>(false);
   const [isModalVisible, setIsModalVisible] = React.useState(false);
-  const {getUser, user} = useContext(UserContext);
+  const {userLogin, user} = useContext(UserContext);
 
   const handleModal = () => setIsModalVisible(() => !isModalVisible);
 
   useEffect(() => {}, [loginError]);
 
   const handleLoginPress = async () => {
-    await getUser(email, senha);
-    if (user) {
-      navigation.navigate('Home');
-    } else {
-      handleModal();
-      setLoginError(true);
-    }
+    userLogin(email, senha)
+      .then(() => {
+        navigation.navigate('Home');
+      })
+      .catch(() => {
+        handleModal();
+        setLoginError(true);
+      });
   };
 
   return (

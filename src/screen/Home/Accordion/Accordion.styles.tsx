@@ -5,8 +5,8 @@ const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
     flexDirection: 'column',
-    borderWidth: 2,
-    borderColor: 'black',
+    // borderWidth: 2,
+    // borderColor: 'black',
     width: '100%',
   },
   vestContainer: {

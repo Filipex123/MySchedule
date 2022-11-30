@@ -13,7 +13,6 @@ import Accordion from './Accordion/Accordion.component';
 const Home: React.FC = () => {
   const {user} = useContext(UserContext);
 
-  console.log(user);
   return (
     <View style={styles.outerContainer}>
       <SafeAreaView style={styles.headerContainer}>
