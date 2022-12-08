@@ -1,19 +1,21 @@
-import React, {useContext} from 'react';
-import {Image, Text, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import styles from './Home.styles';
-import addItem from '../../../assets/addItem.png';
+import React, {useContext, useEffect} from 'react';
+import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
+import styles from './AddExams.style';
+import home from '../../../assets/home.png';
 import completedItems from '../../../assets/completedItems.png';
 import cash from '../../../assets/cash.png';
 import profile from '../../../assets/profile.png';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {UserContext} from '../../context/UserContext';
-import Accordion from './Accordion/Accordion.component';
 import {useNavigation} from '@react-navigation/native';
+import {UserContext} from '../../context/UserContext';
+import AccordionAddExams from './Accordion/AccordionAddExams.component';
 
-const Home: React.FC = () => {
-  const {user} = useContext(UserContext);
+const AddExams: React.FC = () => {
   const navigation = useNavigation();
+  const {exams, examsLogin} = useContext(UserContext);
+
+  useEffect(() => {
+    examsLogin();
+  }, []);
 
   return (
     <View style={styles.outerContainer}>
@@ -28,24 +30,22 @@ const Home: React.FC = () => {
         </View>
       </SafeAreaView>
       <View style={styles.bodyContainer}>
-        <Accordion data={user?.vestibulares} />
+        <AccordionAddExams data={exams} />
       </View>
       <View style={styles.bottomContainer}>
         <View style={styles.bottomBarContainer}>
           <View style={styles.leftBottomContainer}>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('AddExams');
+                navigation.navigate('Home');
               }}
               style={{paddingHorizontal: 12}}>
-              <Image source={addItem} />
+              <Image source={home} />
             </TouchableOpacity>
           </View>
           <View style={styles.rightBottomContainer}>
             <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('FinishedExams');
-              }}
+              onPress={() => {}}
               style={{paddingHorizontal: 12}}>
               <Image source={completedItems} />
             </TouchableOpacity>
@@ -66,4 +66,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default AddExams;

@@ -20,14 +20,14 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [loginError, setLoginError] = useState<boolean>(false);
   const [isModalVisible, setIsModalVisible] = React.useState(false);
-  const {userLogin, user} = useContext(UserContext);
+  const {userLogin} = useContext(UserContext);
 
   const handleModal = () => setIsModalVisible(() => !isModalVisible);
 
   useEffect(() => {}, [loginError]);
 
   const handleLoginPress = async () => {
-    userLogin(email, senha)
+    await userLogin(email, senha)
       .then(() => {
         navigation.navigate('Home');
       })

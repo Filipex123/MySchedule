@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import Vestibular from '../../../model/Vestibular.model';
-import styles from './Accordion.styles';
+import styles from './AccordionAddExams.styles';
 
 import VestibularAccordion from './VestibularAccordion/VestibularAccordion.component';
 
@@ -9,10 +9,7 @@ interface IAccordion {
   data: Vestibular[];
 }
 
-const Accordion: React.FC<IAccordion> = ({data}) => {
-  if (data === undefined) {
-    return null;
-  }
+const AccordionAddExams: React.FC<IAccordion> = ({data}) => {
   return (
     <View style={styles.outerContainer}>
       {data.map((item, index) => {
@@ -30,4 +27,4 @@ const Accordion: React.FC<IAccordion> = ({data}) => {
   );
 };
 
-export default Accordion;
+export default AccordionAddExams;

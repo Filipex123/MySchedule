@@ -1,6 +1,9 @@
 import User from '../model/User.model';
+import Vestibular from '../model/Vestibular.model';
 
-const ENDPOINT_ALUNO = 'http://172.16.233.195:3001/aluno';
+const ADDRESS = '192.168.0.50';
+const ENDPOINT_ALUNO = `http://${ADDRESS}:3001/aluno`;
+const ENDPOINT_EXAMS = `http://${ADDRESS}:3001/exams`;
 
 export const getUserByLogin = async (
   email: string,
@@ -42,4 +45,46 @@ export const checkUserExam = (
   } catch (error: any) {
     console.log(`Erro ao fazer requisicao: ${error}`);
   }
+};
+
+export const getAllExams = async () => {
+  try {
+    const resp = await fetch(`${ENDPOINT_EXAMS}/`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await resp.json();
+
+    console.log(JSON.stringify(data));
+
+    return data as unknown as Vestibular[];
+  } catch (err: any) {
+    console.log(err);
+  }
+
+  return null;
+};
+
+export const getFinishedExams = async () => {
+  try {
+    const resp = await fetch(`${ENDPOINT_ALUNO}/doneExams`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await resp.json();
+
+    console.log(JSON.stringify(data));
+
+    return data as unknown as Vestibular;
+  } catch (err: any) {
+    console.log(err);
+  }
+
+  return null;
 };

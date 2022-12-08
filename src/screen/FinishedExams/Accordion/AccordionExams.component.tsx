@@ -1,27 +1,24 @@
 import React from 'react';
 import {View} from 'react-native';
 import Vestibular from '../../../model/Vestibular.model';
-import styles from './Accordion.styles';
+import styles from './AccordionExams.styles';
 
 import VestibularAccordion from './VestibularAccordion/VestibularAccordion.component';
 
-interface IAccordion {
+interface IAccordionExams {
   data: Vestibular[];
 }
 
-const Accordion: React.FC<IAccordion> = ({data}) => {
-  if (data === undefined) {
-    return null;
-  }
+const AccordionExams: React.FC<IAccordionExams> = ({data}) => {
   return (
     <View style={styles.outerContainer}>
       {data.map((item, index) => {
+        console.log(item);
         return (
           <VestibularAccordion
             key={index}
             id={item._id}
             nome={item.nome}
-            isChecked={item.isChecked}
             materias={item.materias}
           />
         );
@@ -30,4 +27,4 @@ const Accordion: React.FC<IAccordion> = ({data}) => {
   );
 };
 
-export default Accordion;
+export default AccordionExams;
